@@ -13,5 +13,25 @@
     <version>1.0</version>
 
     <packaging>jar</packaging>
+    <build>
+        <plugins>
+             
+            <plugins>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <version>3.3.0</version>
+
+                  <configuration>
+                         <archive>
+                             <manifest>
+                                   <mainClass>com.demo.HelloWorld</mainClass>
+                                   </mainfest>
+                                   </archive>
+                  </configuration>
+
+            </plugin>
+        </plugins>
+    <build>
+    
 
 </project>
