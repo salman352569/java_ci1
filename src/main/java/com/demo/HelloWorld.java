@@ -6,6 +6,7 @@ import com.sun.net.httpserver.HttpExchange;
 import java.time.LocalDateTime;
 
 import java.io.OutputStream;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
 public class HelloWorld {
@@ -13,7 +14,8 @@ public class HelloWorld {
     public static void main(String[] args) throws Exception {
 
         String version ="version 2- Deployed via jenkins CI/CD";
-        String DeployTime =LocalDateTime.now().toString();
+        String deployTime =LocalDateTime.now().toString();
+        string hostname=InetAddress.getLocalHost().getHostName();
 
         //Bind to all interfaces so it is accessibly externally
     
