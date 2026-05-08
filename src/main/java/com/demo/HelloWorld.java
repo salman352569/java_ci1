@@ -15,7 +15,7 @@ public class HelloWorld {
 
         String version ="version 2- Deployed via jenkins CI/CD";
         String deployTime =LocalDateTime.now().toString();
-        string hostname=InetAddress.getLocalHost().getHostName();
+        String hostname=InetAddress.getLocalHost().getHostName();
 
         //Bind to all interfaces so it is accessibly externally
     
@@ -24,6 +24,11 @@ public class HelloWorld {
         server.createContext("/", new HttpHandler() {
             public void handle(HttpExchange exchange) {
                 try {
+                    String requestURI=exchange.getRequestURI().toString();
+
+                    String userAgent=
+                             exchange.getRequestHeaders().getFirst("User-Agent");
+
                     String response = 
                     "=======  jenkins CI/CD Demo Applications ======\n\n" +
                     "Hello from jenkins Pipeline! \n\n" +
